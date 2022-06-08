@@ -1,0 +1,20 @@
+// How to Copy a pair(by value and by reference)
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	pair<int,string> p;
+	//p=make_pair(20,"monika");
+	p={2,"abc"};	
+			
+	pair<int,string> p1=p;			//Duplicating values ,stores copies
+	p1.first=3;					//copies don't support ammendment
+
+	pair<int,string> &p1=p;		      //Copy values by reference
+	p1.first=15;				//Copy by reference support ammendment
+	
+	cout<<p.first<<" "<<p.second;		//Now the first element will be changed
+}
+//Output: 15 abc
+

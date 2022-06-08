@@ -1,0 +1,17 @@
+//How to initialize pair ,give values and access its elements
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	pair<int,string> p;
+	p=make_pair(20,"monika");           //first method of initializing
+	//p={2,"abc"};                      //second method of initializing
+	cout<<p.first<<" "<<p.second;
+}
+
+// Output: 20 monika
+
+
+
