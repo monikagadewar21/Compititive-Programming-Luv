@@ -1,0 +1,28 @@
+// In CASE OF SET AND MAPS ,the basic syntax gives O(N) time complexity
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	set<int> s;
+	for(int i=0;i<(int)(1e6);i++){
+	    s.insert(rand());
+	}
+	for(int i=0;i<1e5;i++){
+	    auto it =lower_bound(s.begin(),s.end(),rand());		// Time complexity is O(N) here
+	}										// CHANGE THE SYNTAX 
+	
+	
+	
+	//cout<<(*it)<<endl;
+	
+}
+
+//Input:
+6
+4 5 5 25 7 8
+
+// Output:
+Execution timed out

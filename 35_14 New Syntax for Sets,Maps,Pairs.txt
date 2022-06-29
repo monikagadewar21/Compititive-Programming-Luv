@@ -1,0 +1,27 @@
+// New syntax for UB AND LB for Sets,Maps,Pairs
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	set<int> s;
+	for(int i=0;i<(int)(1e6);i++){
+	    s.insert(rand());
+	}
+	for(int i=0;i<1e5;i++){
+	    auto it =s.lower_bound(rand());			// Now its T.C is O(logN) and it will compile successfully
+	    
+	}
+	// cout<<(*it)<<" ";
+	
+}
+
+// Input:
+6
+4 5 5 25 7 8
+
+// Output:
+No Output				// But COmpiled successfully ,it means T.C is O(logN) now
+

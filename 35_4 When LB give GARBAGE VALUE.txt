@@ -1,0 +1,30 @@
+// When Lower bound gives GARBAGE VALUE:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int a[n];
+	for(int i=0;i<n;i++){
+	    cin>>a[i];
+	}
+	sort(a,a+n);
+	
+	for(int i=0;i<n;i++){
+	    cout<<a[i]<<" ";
+	}cout<<endl;
+	
+	int *ptr=lower_bound(a,a+n,26);		// Here 26 is not present in the array and its greater element is also not present
+	cout<<(*ptr)<<endl;				// So , it gives GARBAGE VALUE as value at (a+n)th index of array "a"
+	
+}
+
+// INPUT:
+6
+4 5 5 25 7 8
+
+// OUTPUT:
+4 5 5 7 8 25 
+4196461
