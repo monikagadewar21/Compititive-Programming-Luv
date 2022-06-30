@@ -1,0 +1,70 @@
+// INBUILT ALGORITHMS IN VECTOR:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	vector<int> v(n);
+	for(int i=0;i<n;i++){
+	    cin>>v[i];
+	}
+	
+    int min=*min_element(v.begin(),v.end());
+    cout<<min<<endl;
+    int max=*max_element(v.begin(),v.end());
+    cout<<max<<endl;
+    
+    int min1=*min_element(v.begin()+3,v.end());         // In restricted range
+    cout<<min1<<endl;
+    int max1=*max_element(v.begin(),v.end()-3);         // In restricted range
+    cout<<max1<<endl;
+    
+    int sum=accumulate(v.begin(),v.end(),0);
+    cout<<sum<<endl;
+    
+    int ct=count(v.begin(),v.end(),6);
+    cout<<ct<<endl;
+    
+    int element = *find(v.begin(),v.end(),3);
+    cout<<element<<endl;
+    int element1 = *find(v.begin(),v.end(),10);         // Value not present in vector
+    cout<<element1<<endl;                               // return Garbage Value
+    
+    auto it = find(v.begin(),v.end(),10);
+    if(it!=v.end()){
+        cout<<*it<<endl;
+    }
+    else{
+        cout<<"Element not found"<<endl;
+    }
+    
+    reverse(v.begin()+2,v.end());
+    for(auto value:v){
+        cout<<value<<" ";
+    }cout<<endl;
+    
+    string s="abcdefgh";
+    reverse(s.begin()+2,s.end());
+    cout<<s<<endl;
+    
+      
+}
+
+// INPUT:
+6
+2 3 1 6 7 6
+
+// OUTPUT:
+1
+7
+6
+3
+25
+2
+3
+135137			// Garbage Value
+Element not found
+2 3 6 7 6 1 		// Reversed vector
+abhgfedc			// Reversed string excepth first two letters

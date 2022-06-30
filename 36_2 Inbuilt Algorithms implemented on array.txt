@@ -1,0 +1,70 @@
+// INBUILT ALGORITHMS IN ARRAY:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	int v[n];
+	for(int i=0;i<n;i++){
+	    cin>>v[i];
+	}
+	
+    int min=*min_element(v,v+n);
+    cout<<min<<endl;
+    int max=*max_element(v,v+n);
+    cout<<max<<endl;
+    
+    int min1=*min_element(v+3,v+n);         // In restricted range
+    cout<<min1<<endl;
+    int max1=*max_element(v,v+n-3);         // In restricted range
+    cout<<max1<<endl;
+    
+    int sum=accumulate(v,v+n,0);
+    cout<<sum<<endl;
+    
+    int ct=count(v,v+n,6);
+    cout<<ct<<endl;
+    
+    int element = *find(v,v+n,3);
+    cout<<element<<endl;
+    int element1 = *find(v,v+n,10);         // Value not present in vector
+    cout<<element1<<endl;                   // return Garbage Value
+    
+    auto it = find(v,v+n,10);
+    if(it!=v+n){
+        cout<<*it<<endl;
+    }
+    else{
+        cout<<"Element not found"<<endl;
+    }
+    
+    reverse(v+2,v+n);
+    for(auto value:v){
+        cout<<value<<" ";
+    }cout<<endl;
+    
+    string s="abcdefgh";
+    reverse(s.begin()+2,s.end());
+    cout<<s<<endl;
+    
+      
+}
+
+//INPUT:
+6
+2 3 1 6 7 6
+
+//OUTPUT:
+1
+7
+6
+3
+25
+2
+3
+4197311
+Element not found
+2 3 6 7 6 1 
+abhgfedc
