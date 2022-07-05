@@ -1,0 +1,30 @@
+// No duplicate keys allow but value update.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void printmap(map<int,string>&m){
+    cout<<m.size()<<endl;
+    for(auto &pr:m){
+        cout<<pr.first<<" "<<pr.second<<endl;
+    }
+}
+int main() {
+	map<int,string>m;
+	m[1]="abc";
+	m[5]="def";
+	m[3]="ghi";
+	m[2]="b";
+	m.insert({-1,"abcd"});
+	m[1]="monika";
+	printmap(m);
+}
+
+// Output:
+5
+-1 abcd
+1 monika
+2 b
+3 ghi
+5 def
+

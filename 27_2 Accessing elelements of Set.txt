@@ -1,0 +1,55 @@
+// Accessing elements in a Set:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void printset(set<string> &s){
+    cout<<s.size()<<endl;
+    for(string value:s){
+        cout<<value<<endl;
+    }
+    cout<<endl;
+}
+
+int main() {
+    set<string>s;
+    s.insert("bcd");
+    s.insert("efg");
+    s.insert("klm");
+    s.insert("noq");
+    s.insert("hij");
+    s.insert("abc");
+    printset(s);
+    
+    auto it=s.find("abc");
+    if(it!=s.end()){
+        s.erase(it);				// Passing Iterator
+    }
+    printset(s);
+    
+    s.erase("bcd");				// Passing element
+    printset(s);
+}
+
+// OUTPUT:
+6			// The original set
+abc
+bcd
+efg
+hij
+klm
+noq
+
+5
+bcd			// "abc" deleted from the set 
+efg
+hij
+klm
+noq
+
+4			// "bcd" deleted from the set
+efg
+hij
+klm
+noq
+

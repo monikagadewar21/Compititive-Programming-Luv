@@ -1,0 +1,29 @@
+// How to find an element in a map.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void printmap(map<int,string>&m){
+    cout<<m.size()<<endl;
+    for(auto &pr:m){
+        cout<<pr.first<<" "<<pr.second<<endl;
+    }
+}
+int main() {
+	map<int,string>m;
+	m[1]="abc";
+	m[5]="def";
+	m[3]="ghi";
+	m[2]="aaa";
+	m[7]="bab";
+	m[0]="nan";
+	m[100]="hi";
+	m[20]="bro";
+	
+	auto it= m.find(2);				// .find() gives an iterator and .find() takes key value 
+	cout<<it->first<<" "<<it->second<<endl;
+    
+}
+
+//Output:
+2 aaa

@@ -1,0 +1,50 @@
+// Deleting element which appears multiple times in the Multiset
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	multiset<string> s;
+	
+	s.insert("abc");
+	s.insert("cde");
+	s.insert("bcd");
+	s.insert("efg");
+	s.insert("abc");
+    	s.insert("def");
+    	s.insert("bcd");
+    
+    	auto it=s.find("abc");
+    	if(it!=s.end()){
+       s.erase(it);
+    	}
+
+	for(auto val:s){
+	    cout<<val<<endl;
+	}    
+	
+}
+
+
+// ORIGINAL MULTISET:						
+abc
+abc
+bcd
+bcd
+cde
+def
+efg
+
+// OUTPUT:
+abc			// First "abc" deleted but other "abc" remains
+bcd
+bcd
+cde
+def
+efg
+
+
+
+

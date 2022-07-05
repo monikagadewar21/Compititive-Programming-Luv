@@ -1,0 +1,58 @@
+*/
+Given N string and Q queries. In each query you are given a string.Print YES if string is present else print NO.
+N<=10^6
+|S|<=100
+Q<=10^6
+ 
+ /*
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	unordered_set<string> s;
+	
+	for(int i=0;i<n;i++){
+	    string str;
+	    cin>>str;
+	    s.insert(str);
+	}
+	int q;
+	cin>>q;
+	while(q--){
+	    string str;
+	    cin>>str;
+	    if(s.find(str)==s.end()){
+	        cout<<"NO"<<endl;
+	        
+	    }else{
+	        cout<<"YES"<<endl;
+	    }
+	    
+	}
+}
+
+// INPUT:
+8
+abc
+def
+abc
+ghj
+jkl
+ghj
+ghj
+abc
+
+4
+monika
+abc
+ghj
+abcdef
+
+// OUTPUT:
+NO
+YES
+YES
+NO

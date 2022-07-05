@@ -1,0 +1,25 @@
+// How to clear all elements in a map
+
+
+void printmap(map<int,string>&m){
+    cout<<m.size()<<endl;
+    for(auto &pr:m){
+        cout<<pr.first<<" "<<pr.second<<endl;
+    }
+}
+int main() {
+	map<int,string>m;
+	m[1]="abc";
+	m[5]="def";
+	m[3]="ghi";
+	m[2]="aaa";
+	m[100]="hi";
+	m[20]="bro";
+	
+	m.clear();
+	printmap(m);
+    
+}
+
+//Output:
+0

@@ -1,0 +1,33 @@
+// Multiset implementation:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	multiset<string> s;
+	
+	s.insert("abc");
+	s.insert("cde");
+	s.insert("bcd");
+	s.insert("efg");
+	s.insert("abc");
+    	s.insert("def");
+    	s.insert("bcd");
+
+	for(auto val:s){
+	    cout<<val<<endl;
+	}    
+	
+}
+
+// OUTPUT:
+abc				// duplicate values
+abc				// Sorted order
+bcd
+bcd
+cde
+def
+efg
+

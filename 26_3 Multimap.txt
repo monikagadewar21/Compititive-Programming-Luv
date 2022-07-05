@@ -1,0 +1,28 @@
+// Declaration of Multimap;
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void printmap(multimap<int,string> &m){
+    cout<<m.size()<<endl;
+    for(auto &pr:m){
+        cout<<pr.first<<" "<<pr.second<<endl;
+    }
+}
+int main() {
+	multimap<int,string>m;
+	m.insert({1,"a"});
+	m.insert({2,"b"});
+	m.insert({3,"c"});
+	m.insert({2,"ghj"});
+	m.insert({2,"jkl"});
+	printmap(m);
+}
+
+// OUTPUT:
+5
+1 a
+2 b
+2 ghj
+2 jkl
+3 c

@@ -1,0 +1,40 @@
+// Time complexity and automatically assined values.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void printmap(map<int,string>&m){
+    cout<<m.size()<<endl;
+    for(auto &pr:m){		// O(log n) : Accessing element
+        cout<<pr.first<<" "<<pr.second<<endl;
+    }
+}
+int main() {
+	map<int,string>m;
+	m[1]="abc";			// O(log n) : Inserting element
+	m[5]="def";
+	m[3]="ghi";
+	m[2];				// It takes empty string as its value if not declared.
+	printmap(m);
+}
+
+//Output:
+4
+1 abc
+2 					// empty string as value of key 2.
+3 ghi
+5 def
+
+
+
+
+
+
+
+
+
+
+
+
+

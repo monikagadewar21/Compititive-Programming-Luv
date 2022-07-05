@@ -1,0 +1,31 @@
+// Implementation of Sets:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+void printset(set<string> &s){
+    cout<<s.size()<<endl;
+    for(string value:s){
+        cout<<value<<endl;
+    }
+}
+
+int main() {
+    set<string>s;
+    s.insert("bcd");
+    s.insert("efg");
+    s.insert("klm");
+    s.insert("noq");
+    s.insert("hij");
+    s.insert("abc");
+    printset(s);
+}
+
+// OUTPUT:
+6
+abc			// Sorted Order
+bcd
+efg
+hij
+klm
+noq

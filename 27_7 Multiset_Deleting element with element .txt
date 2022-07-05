@@ -1,0 +1,43 @@
+// Deleting element while passing element :
+
+// All duplicate elements deleted:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int n;
+	cin>>n;
+	multiset<string> s;
+	
+	s.insert("abc");
+	s.insert("cde");
+	s.insert("bcd");
+	s.insert("efg");
+	s.insert("abc");
+    s.insert("def");
+    s.insert("bcd");
+    
+    s.erase("abc");
+
+	for(auto val:s){
+	    cout<<val<<endl;
+	}    
+	
+}
+
+//ORIGINAL MULTISET:
+abc
+abc
+bcd
+bcd
+cde
+def
+efg
+
+//OUTPUT:
+bcd				// both "abc" deleted from the multiset
+bcd
+cde
+def
+efg
