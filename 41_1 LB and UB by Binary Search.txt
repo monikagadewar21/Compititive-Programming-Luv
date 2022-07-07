@@ -1,0 +1,121 @@
+// IMPLEMENTATION OF LOWER BOUND AND UPPER BOUND BY BINARY SEARCH:
+
+// MULTIPLE EXAMPLES:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int lower_bound(vector<int>&v,int key){
+    int lo=0, hi=v.size()-1;
+    int mid;
+    while((hi-lo)>1){
+        mid=(hi+lo)/2;
+        if(v[mid]<key){
+            lo=mid+1;
+        }
+        else{
+            hi=mid;
+        }
+        
+    }
+    if(v[lo]>=key){
+        return lo;
+    }
+    else if(v[hi]>=key){
+        return hi; 
+    }
+    else{
+        return -1;
+    }
+}
+
+int upper_bound(vector<int>&v,int key){
+    int lo=0, hi=v.size()-1;
+    int mid;
+    while((hi-lo)>1){
+        mid=(hi+lo)/2;
+        if(v[mid]<=key){
+            lo=mid+1;
+        }
+        else{
+            hi=mid;
+        }
+        
+    }
+    if(v[lo]>key){
+        return lo;
+    }
+    else if(v[hi]>key){
+        return hi; 
+    }
+    else{
+        return -1;
+    }
+}
+
+
+int main() {
+	int n;
+	cin>>n;
+	vector<int> v(n);
+	for(int i=0;i<n;i++){
+	    cin>>v[i];
+	}
+	int key;
+	cin>>key;
+	
+	int lb=lower_bound(v,key);
+	cout<<lb<<" "<<v[lb]<<endl;
+	
+	int ub=upper_bound(v,key);
+	cout<<ub<<" "<<v[ub]<<endl;
+		
+}
+
+// INPUT:
+5
+1 3 5 7 9 
+5
+
+// OUTPUT:
+2 5					// WHEN LB AND UB ARE DIFFERENT 
+3 7
+
+
+______________________________________________________________________________________________________
+
+// INPUT:
+5
+1 3 5 7 9 
+6
+
+// OUTPUT:
+3 7					// WHEN LB AND UB ARE SAME
+3 7
+______________________________________________________________________________________________________
+
+
+// INPUT:
+5
+1 3 5 7 9 
+20
+
+// OUTPUT:
+-1 0					// WHEN LB AND UB DOES NOT EXIST
+-1 0
+
+
+______________________________________________________________________________________________________
+
+
+// INPUT:
+5
+1 3 5 7 9 
+9
+
+// OUTPUT:
+4 9
+-1 0					// WHEN LB EXIST BUT UB DOES NOT EXIST
+
+
+
